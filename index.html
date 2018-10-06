@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="CV" >
+    <meta property="og:title" content="CV" >
+    <title>CV of Daniil Loban</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Daniil Loban</h1>
+      <h2 class="desired-position">Desired position: junior JavaScript developer</h2>
+    </header>
+    <img class="photo" alt="photo with Dannil Loban" src="images/photo.jpg" width="150" height="150"/>
+    <div class="contacts">
+      <h3>Contacts:</h3>
+      <p><strong>phone:</strong><span class="phone">+375(29)642-62-82</span></p>
+      <p><strong>e-mail:</strong><span class="email"><a href="mailto:daniil.loban@gmail.com?subject=Resume response">daniil.loban@gmail.com</a></span></p>
+    </div>   
+    <div class="summary">
+        <h3>Summary:</h3>
+        <p>My main goal is get a job as junior JavaScript developer</p>
+    </div>   
+    <div class="skills">
+        <h3>Skills:</h3>
+        <p>I'am at begin learning</p>
+    </div>   
+    <div class="code-examples">
+        <h3>Code-examples:</h3>
+        <p>There are not many examples, basically they are all educational.</p>
+        <p>You may see my code on the <a href="https://github.com/daniil-loban?tab=repositories" target="_blank">GitHub</a></p>
+        <button type="button">Show</button>
+        <div class="code-example">
+          <pre>
+          <code>
+const SIZE_PART = 5
+const MOD_PART = 10 ** (SIZE_PART)
+const getParts =(num) =>{
+    let parts =[],
+        k = 0;
+    while(num > 0){
+        k = num % MOD_PART;
+        parts.unshift(k)
+        num = Math.floor(num / MOD_PART);
+    }
+    return parts
+}
+
+const mul = (num, num2) =>{
+    let remain = 0, 
+        res = 0, 
+        k = 0;
+    for (let i = num.length-1; i >= 0; --i){
+        res = num[i] * num2;
+        k = (res + remain) % MOD_PART;
+        remain = Math.floor(res / MOD_PART);
+        num[i] = k;
+    }
+    if (remain){
+        num.unshift(remain); 
+    }
+    return num
+}
+
+const zeroPad =(num, places)=>{
+    var zero = places - num.toString().length + 1;
+    return String(Array(+(zero > 0 && zero)).join("0") + num);
+}
+
+const joinNum=(num)=>{
+    let lastNum =num.pop();
+    let last ='' + typeof(num[0])!=='undefined'? zeroPad(lastNum, SIZE_PART): lastNum;
+    let result = '' + typeof(num[0])!=='undefined'? num[0]:'';
+    let sz = num.length;
+    for(let i=1; i <sz; i++) 
+       result += zeroPad(num[i], SIZE_PART);
+    result += last
+    return result;
+}
+
+const test =(num1, numPow) =>{
+    let num = num1;
+    let value = getParts(num)
+    for (let i = numPow; i > 1; --i)
+        value = mul(value, num1)
+    let result = joinNum(value)
+    console.log(`${result}\ncount of symbols: ${result.length} \ncount of used parts: ${value.length}`)
+}
+console.log(test(3, 1000));
+          </code>
+        </pre>  
+      </div>   
+    </div>
+    <div class="experience">
+        <h3>An experience:</h3>
+        <p>You may see my code on the <a href="https://github.com/daniil-loban?tab=repositories" target="_blank">GitHub</a></p>
+    </div>      
+    <div class="english-level">
+        <h3>English level:</h3>
+        <p>After graduation from evening school where I had been learning English two years, I studied English on my own. After 13 years I studied at MSLU in absentia (2 courses), but there was not enough time for practice. Basically I studied English while reading the documentation, my colloquial English is very weak. I plan to go to English courses soon. I have to make sure that I have programming skills, but anyway I like English.</p>
+    </div>      
+
+  </div>
+</body>
+</html>
