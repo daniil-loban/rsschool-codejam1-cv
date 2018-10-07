@@ -35,60 +35,7 @@
         <div class="code-example">
           <pre>
           <code>
-const SIZE_PART = 5
-const MOD_PART = 10 ** (SIZE_PART)
-const getParts =(num) =>{
-    let parts =[],
-        k = 0;
-    while(num > 0){
-        k = num % MOD_PART;
-        parts.unshift(k)
-        num = Math.floor(num / MOD_PART);
-    }
-    return parts
-}
-
-const mul = (num, num2) =>{
-    let remain = 0, 
-        res = 0, 
-        k = 0;
-    for (let i = num.length-1; i >= 0; --i){
-        res = num[i] * num2;
-        k = (res + remain) % MOD_PART;
-        remain = Math.floor(res / MOD_PART);
-        num[i] = k;
-    }
-    if (remain){
-        num.unshift(remain); 
-    }
-    return num
-}
-
-const zeroPad =(num, places)=>{
-    var zero = places - num.toString().length + 1;
-    return String(Array(+(zero > 0 && zero)).join("0") + num);
-}
-
-const joinNum=(num)=>{
-    let lastNum =num.pop();
-    let last ='' + typeof(num[0])!=='undefined'? zeroPad(lastNum, SIZE_PART): lastNum;
-    let result = '' + typeof(num[0])!=='undefined'? num[0]:'';
-    let sz = num.length;
-    for(let i=1; i <sz; i++) 
-       result += zeroPad(num[i], SIZE_PART);
-    result += last
-    return result;
-}
-
-const test =(num1, numPow) =>{
-    let num = num1;
-    let value = getParts(num)
-    for (let i = numPow; i > 1; --i)
-        value = mul(value, num1)
-    let result = joinNum(value)
-    console.log(`${result}\ncount of symbols: ${result.length} \ncount of used parts: ${value.length}`)
-}
-console.log(test(3, 1000));
+ 
           </code>
         </pre>  
       </div>   
