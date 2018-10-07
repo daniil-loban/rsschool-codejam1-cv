@@ -18,6 +18,16 @@ main{
 header.main-header{
   margin:  0 0;
   background-color: rgb(160, 221, 250);
+  display:block;
+}
+
+footer {
+  background-color: rgb(160, 221, 250);
+  max-width: 1024px;
+  min-width: 400px;
+  margin: 0 auto;
+  
+  overflow: auto;
 }
 
 .margin1em{
@@ -50,7 +60,7 @@ h3 {
 
 .desired-position{
   padding: 1em;
-  font-size: 1rem;
+  font-size: 1em;
   text-transform: uppercase;
   text-align: center;
   color: lightseagreen;
@@ -63,10 +73,11 @@ h3 {
 
 .code-example {
   display: none;
-  padding: 1em;
+  padding: 1rem;
   color: white;
   background-color: #1e1e1e;
-
+  font-size: 1rem;
+  overflow: auto;
 }
 
 span.blue{
