@@ -1,8 +1,8 @@
 // example function for show it on the page
+
 const example = (/*begin*/) => {
-  
-  /* This code can calculate 3 ^ 1000000 in 7 minutes */
-  /* on my old laptop and display this number in the usual way. */
+  // This code can calculate 3 ^ 1000000 in 7 minutes 
+  // on my old laptop and display this number in the usual way. 
 
   const SIZE_PART = 5
   const MOD_PART  = 10 ** (SIZE_PART)
@@ -129,8 +129,8 @@ const markup = () =>{
     let element = listMark[e];
     textCode = textCode.replace(element.mask,`$1<span class=${element.class}>${element.key}</span>$3`);
   }
-  textCode = textCode.replace(/(\/*)(.*)(\*\/)/g ,`$1<span class="green">$2</span>$3`);
-  /(\/*)(.*)(\*\/)/
+
+  textCode = textCode.replace(/(\/\/.*)/g ,`<span class="green">$1</span>`);
   let code = document.getElementsByTagName('code')[0];
   code.innerHTML = textCode;
 }
