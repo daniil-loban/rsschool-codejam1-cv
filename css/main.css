@@ -15,7 +15,7 @@ main, header, footer{
   background-color: rgb(195, 237, 255);
 }
 
-header.main-header{
+header{
   background-color: rgb(160, 221, 250);
 }
 
@@ -77,18 +77,13 @@ h3 {
   padding: 0 1em 1em;
 }
 
-.english-level p{
-  /*text-indent: 1.5em;*/
-  /*text-align: justify;*/
-}
-
 /* for code highliting*/
 .code-example {
   display: none;
   padding: 2em 1em;
   color: white;
   background-color: #1e1e1e;
-  font-size: 1rem;
+  font-size: 1em;
   overflow: auto;
 }
 
