@@ -18,13 +18,13 @@ const example = (/*begin*/) => {
       let remain = 0, 
           res = 0, 
           k = 0;
-      for (let i = num.length - 1; i >= 0; --i){
+      for(let i = num.length - 1; i >= 0; --i){
           res = num[i] * num2;
           k = (res + remain) % MOD_PART;
           remain = Math.floor(res / MOD_PART);
           num[i] = k;
       }
-      if (remain){
+      if(remain){
           num.unshift(remain); 
       }
       return num
@@ -49,7 +49,7 @@ const example = (/*begin*/) => {
   const test = (num1, numPow) => {
       let num = num1;
       let value = getParts(num)
-      for (let i = numPow; i > 1; --i)
+      for(let i = numPow; i > 1; --i)
           value = mul(value, num1)
       let result = joinNum(value)
       console.log(`${result}\ncount of symbols: ${result.length} \ncount of used parts: ${value.length}`)
@@ -80,6 +80,7 @@ const getListMark = () =>{
    { key:'String', class: 'blue'},
    { key:'Array', class: 'blue'},
    { key:'unshift', class: 'blue'},
+   { key:'pop', class: 'blue'},
    /*{ key:'=', class:  'red'},*/ 
    { key:'>=', class: 'red'}, 
    { key:'>=', class: 'red'},
@@ -89,12 +90,13 @@ const getListMark = () =>{
    { key:'*', class: 'red'},
    { key:'/', class: 'red'},
    /*{ key:'>', class: 'red'},*/
+   { key:'&', class: 'red'},
    { key:'%', class: 'red'},
    { key:'?', class: 'red'},
    { key:':', class: 'red'},
    { key:'!=', class: 'red'},
    { key:'!==', class: 'red'},
-   { key:'if', class: 'red'},
+   /*{ key:'if', class: 'red'},*/
    { key:'for', class: 'red'},
    { key:'return', class: 'red'},
    { key:'while', class: 'red'},
@@ -102,6 +104,7 @@ const getListMark = () =>{
    { key:'console', class: 'emerald'},
    { key:'undefined', class: 'brown'},
    { key:"'", class: 'brown'},
+   { key:'$', class: 'brown'},
    { key:'Math', class: 'emerald'},
    { key:'\\n', class: 'purple'},
  ]
@@ -137,13 +140,21 @@ const markup = () =>{
       switch(textCode.slice(i,i+3).join('')){
         case ' = ':
           textCode.splice(i, 3, `<span class="${'red'}">${' = '}</span>`);
+          bReplased = true;
           break; 
         case ' > ':
           textCode.splice(i, 3, `<span class="${'red'}">${' > '}</span>`);
+          bReplased = true;
           break;
         case ' + ':
           textCode.splice(i, 3, `<span class="${'red'}">${' + '}</span>`);
+          bReplased = true;
           break;
+        case 'if(':
+          textCode.splice(i, 2, `<span class="${'red'}">${'if'}</span>`);
+          bReplased = true;
+          break; 
+
         }  
     }
   
