@@ -39,6 +39,7 @@ h1 {
 }
 
 .code-example {
+  display: none;
   padding: 1em;
   color: white;
   background-color: #1e1e1e;
@@ -64,6 +65,7 @@ span.emerald{
 span.brown{
   color: #ce915b;
 }
+
 span.purple{
   color: #c586b5;
 }

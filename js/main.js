@@ -1,3 +1,4 @@
+// example function for show it on the page
 const example = (/*begin*/) => {
   const SIZE_PART = 5
   const MOD_PART  = 10 ** (SIZE_PART)
@@ -55,6 +56,18 @@ const example = (/*begin*/) => {
   }
   console.log(test(3, 1000));
 /*end*/}
+function toggleCodeEvent (event){
+  // toggle button
+  let button = event.currentTarget;
+  button.innerText= (button.innerText ==='roll down') ? 'roll up': 'roll down';
+  // toggle code
+  let code = document.getElementById('code_example');
+  code.style.display = (code.style.display === 'block') ? 'none': 'block' ;
+}
+
+const toggleCodeEventSet = () =>{
+    document.getElementById('toggle_show').onclick = toggleCodeEvent;
+}
 
 const getListMark = () =>{
    return [{ key:'=>', class: 'blue'},
@@ -93,16 +106,19 @@ const getListMark = () =>{
  ]
 }
 
+// function for highlight syntax
 const markup = () =>{
   let source = example.toString().replace(/\(\/\*begin\*\/\) => \{/,''); 
+
   // prepare text code
   source = source.replace(/\/\*end\*\/}/,''); 
   let textCode =  source;
   textCode = textCode.split('');
-  // prepare keyword for synax hilight   
+
+  // prepare keyword for highlight syntax
   let listMark = getListMark();
   listMark = listMark.sort((a,b) => a.key.length - b.key.length);
-  
+
   // add span with color class to each keyford
   let bReplased =false 
   for (let i = textCode.length-1; i>=0; --i){
@@ -116,7 +132,7 @@ const markup = () =>{
         break;  
       } 
     }
-    if (bReplased == false){
+    if (bReplased == false){ // last option 
       switch(textCode.slice(i,i+3).join('')){
         case ' = ':
           textCode.splice(i, 3, `<span class="${'red'}">${' = '}</span>`);
@@ -135,4 +151,5 @@ const markup = () =>{
   }
 }
 
+toggleCodeEventSet();
 markup();
