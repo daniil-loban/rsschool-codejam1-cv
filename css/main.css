@@ -6,12 +6,31 @@
 body {
   font-family: Arial, Helvetica, sans-serif
 }
-.container{
+main{
+  box-sizing: border-box;
   max-width: 1024px;
   min-width: 400px;
   margin: 0 auto;
-  padding: 0 4%;
-  background-color: #fee;
+  padding: 0;
+  background-color: rgb(195, 237, 255);
+}
+
+header.main-header{
+  margin:  0 0;
+  background-color: rgb(160, 221, 250);
+}
+
+.margin1em{
+  margin: 1em 1em;
+}
+
+.btn{
+  position: relative;
+  top: -0.2em;
+  padding: 0.2em 0.5em;
+  border-radius: 1em;
+  border: 1px solid gray;
+  background-color: rgb(160, 221, 250);
 }
 
 .photo {
@@ -23,6 +42,10 @@ h1 {
   padding: 0.5em;
   color: lightseagreen;
   text-align: center;
+}
+
+h3 {
+  margin-top: 1em;
 }
 
 .desired-position{

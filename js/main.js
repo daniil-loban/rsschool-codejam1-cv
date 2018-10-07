@@ -56,10 +56,11 @@ const example = (/*begin*/) => {
   }
   console.log(test(3, 1000));
 /*end*/}
+
 function toggleCodeEvent (event){
   // toggle button
   let button = event.currentTarget;
-  button.innerText= (button.innerText ==='roll down') ? 'roll up': 'roll down';
+  button.innerText= (button.innerText ==='expand') ? 'shrink': 'expand';
   // toggle code
   let code = document.getElementById('code_example');
   code.style.display = (code.style.display === 'block') ? 'none': 'block' ;

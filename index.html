@@ -1,54 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta property="og:title" content="Daniil Loban CV" >
-    <title>Daniil Loban CV</title>
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js" defer></script>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Daniil Loban</h1>
-      <h2 class="desired-position">Desired position: junior JavaScript developer</h2>
-    </header>
-    <img class="photo" alt="photo with Dannil Loban" src="images/photo.jpg" width="150" height="150"/>
-    <div class="contacts">
-      <h3>Contacts:</h3>
-      <p><strong>phone:</strong><span class="phone">+375(29)642-62-82</span></p>
-      <p><strong>e-mail:</strong><span class="email"><a href="mailto:daniil.loban@gmail.com?subject=Resume response">daniil.loban@gmail.com</a></span></p>
-    </div>   
-    <div class="summary">
-        <h3>Summary:</h3>
-        <p>My main goal is get a job as junior JavaScript developer</p>
-    </div>   
-    <div class="skills">
-        <h3>Skills:</h3>
-        <p>I'am at begin learning</p>
-    </div>   
-    <div class="code-examples">
-        <h3>Code-examples:</h3>
-        <p>There are not many examples, basically they are all educational.</p>
-        <p>You may see my code on the <a href="https://github.com/daniil-loban?tab=repositories" target="_blank">GitHub</a></p>
-        <p>Or you can unrool the one example right here. Plese, click on the button.<button type="button" id="toggle_show">roll down</button></p>
-        <div class="code-example" id="code_example">
-          <pre>
-          <code>
- 
-          </code>
-        </pre>  
-      </div>   
-    </div>
-    <div class="experience">
-        <h3>An experience:</h3>
-        <p>You may see my code on the <a href="https://github.com/daniil-loban?tab=repositories" target="_blank">GitHub</a></p>
-    </div>      
-    <div class="english-level">
-        <h3>English level:</h3>
-        <p>After graduation from evening school where I had been learning English two years, I studied English on my own. After 13 years I studied at MSLU in absentia (2 courses), but there was not enough time for practice. Basically I studied English while reading the documentation, my colloquial English is very weak. I plan to go to English courses soon. I have to make sure that I have programming skills, but anyway I like English.</p>
-    </div>      
+<html lang="en" prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="UTF-8">
+        <!--
+        <meta itemprop="name" content="Daniil Loban CV" >
+        <meta itemprop="description" content="This page maked for the Code Jam" >
+        <meta itemprop="image" content="images/photo.jpg" >
+        -->
+        <title>Daniil Loban CV</title>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/main.js" defer></script>
+    </head>
+    <body>
 
-  </div>
-</body>
+        <main>
+            <header class="main-header margin1em">
+                <h1>Daniil Loban</h1>
+                <h2 class="desired-position">Desired position: junior JavaScript developer</h2>
+            </header>
+            <section class="main_section-photo margin1em">
+                <img class="photo" alt="photo with Dannil Loban" src="images/photo.jpg" width="150" height="150"/>
+            </section>
+            <section class="main_section-contacts margin1em">
+                <h3>Contacts:</h3>
+                <p><strong>phone:</strong><span class="phone">+375(29)642-62-82</span></p>
+                <p><strong>e-mail:</strong><span class="email"><a href="mailto:daniil.loban@gmail.com?subject='Resume%20response'">daniil.loban@gmail.com</a></span></p>
+            </section>
+            <section class="main_section-summary margin1em">
+                <h3>Summary:</h3>
+                <p>My main goal is get a job as junior JavaScript developer</p>
+            </section>
+            <section class="main_section-skills margin1em">
+                <h3>Skills:</h3>
+                <p>I'am at begin learning</p>
+            </section> 
+            <section class="main_section-code-examples margin1em">
+                <h3>Code-examples:</h3>
+                <p>There are not many examples, basically they are all educational.</p>
+                <p>You may see my code on the <a href="https://github.com/daniil-loban?tab=repositories" target="_blank">GitHub</a></p>
+                <p>Or you can expand the one example right here. Plese, click on the button.<button type="button" id="toggle_show" class="btn" >expand</button></p>
+                <div class="code-example" id="code_example">
+                    <pre>
+                        <code>
+                            <!-- The example code will inserted here. -->       
+                        </code>
+                    </pre>  
+                </div>   
+            </section>
+            <section class="main_section-experience margin1em">
+                <h3>An experience:</h3>
+                <p>You may see my code on the <a href="https://github.com/daniil-loban?tab=repositories" target="_blank">GitHub</a></p>
+            </section>      
+            <section class="main_section-english-level margin1em">
+                <h3>English level:</h3>
+                <p>After graduation from evening school where I had been learning English two years, I studied English on my own. After 13 years I studied at MSLU in absentia (2 courses), but there was not enough time for practice. Basically I studied English while reading the documentation, my colloquial English is very weak. I plan to go to English courses soon. I have to make sure that I have programming skills, but anyway I like English.</p>
+            </section>      
+        </main>
+    </body>
 </html>
